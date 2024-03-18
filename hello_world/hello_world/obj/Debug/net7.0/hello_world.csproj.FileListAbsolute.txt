@@ -1,0 +1,15 @@
+/Users/marcelogomesmarques/Projects/hello_world/hello_world/bin/Debug/net7.0/hello_world
+/Users/marcelogomesmarques/Projects/hello_world/hello_world/bin/Debug/net7.0/hello_world.deps.json
+/Users/marcelogomesmarques/Projects/hello_world/hello_world/bin/Debug/net7.0/hello_world.runtimeconfig.json
+/Users/marcelogomesmarques/Projects/hello_world/hello_world/bin/Debug/net7.0/hello_world.dll
+/Users/marcelogomesmarques/Projects/hello_world/hello_world/bin/Debug/net7.0/hello_world.pdb
+/Users/marcelogomesmarques/Projects/hello_world/hello_world/obj/Debug/net7.0/hello_world.csproj.AssemblyReference.cache
+/Users/marcelogomesmarques/Projects/hello_world/hello_world/obj/Debug/net7.0/hello_world.GeneratedMSBuildEditorConfig.editorconfig
+/Users/marcelogomesmarques/Projects/hello_world/hello_world/obj/Debug/net7.0/hello_world.AssemblyInfoInputs.cache
+/Users/marcelogomesmarques/Projects/hello_world/hello_world/obj/Debug/net7.0/hello_world.AssemblyInfo.cs
+/Users/marcelogomesmarques/Projects/hello_world/hello_world/obj/Debug/net7.0/hello_world.csproj.CoreCompileInputs.cache
+/Users/marcelogomesmarques/Projects/hello_world/hello_world/obj/Debug/net7.0/hello_world.dll
+/Users/marcelogomesmarques/Projects/hello_world/hello_world/obj/Debug/net7.0/refint/hello_world.dll
+/Users/marcelogomesmarques/Projects/hello_world/hello_world/obj/Debug/net7.0/hello_world.pdb
+/Users/marcelogomesmarques/Projects/hello_world/hello_world/obj/Debug/net7.0/hello_world.genruntimeconfig.cache
+/Users/marcelogomesmarques/Projects/hello_world/hello_world/obj/Debug/net7.0/ref/hello_world.dll

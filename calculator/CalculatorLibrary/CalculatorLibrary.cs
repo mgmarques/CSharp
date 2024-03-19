@@ -12,16 +12,6 @@ namespace CalculatorLibrary
             writer.WriteEndObject();
             writer.Close();
         }
-
-        public bool IsPrime(int candidate)
-        {
-                if (candidate < 2)
-                {
-                    return false;
-                }
-                throw new NotImplementedException("Not fully implemented.");
-        }
-
         public Calculator()
         {
             StreamWriter logFile = File.CreateText("calculatorlog.json");

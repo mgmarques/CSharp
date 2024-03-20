@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ShapesDrawing\ShapesDrawing.csproj" />
+    <ProjectReference Include="..\BasicInventorySystem\BasicInventorySystem.csproj" />
   </ItemGroup>
 
 </Project>

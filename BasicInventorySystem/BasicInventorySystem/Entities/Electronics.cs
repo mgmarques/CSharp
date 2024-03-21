@@ -5,7 +5,7 @@ namespace BasicInventorySystem.Entities
 {
     public class Electronics : Item
 	{
-        public Eletronic Kind { get; set; }
+        public Electronic Kind { get; set; }
         public string ?Model { get; set; }
         public DateTime ManufactureDate { get; set; }
 
@@ -14,7 +14,7 @@ namespace BasicInventorySystem.Entities
         }
 
         public Electronics(string name, string description, float weight,
-            double price, Eletronic kind, string model,
+            double price, Electronic kind, string model,
             DateTime manufactureDate) : base(name, description, weight, price)
         {
             Kind = kind;

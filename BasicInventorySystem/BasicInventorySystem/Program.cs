@@ -7,6 +7,8 @@ namespace Course
 {
     class Program
     {
+        public const int LineSize = 50;
+
         static void ListEnums(Type enumType)
         {
             foreach (int i in Enum.GetValues((enumType)))
@@ -35,7 +37,8 @@ namespace Course
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine($"Please, enter a valid integer number!");
+                    Console.Clear();
+                    Console.Write($"Please, enter a valid integer number! ");
                 }    
             } while (nok);
 
@@ -46,7 +49,8 @@ namespace Course
             {
                 do
                 {
-                    Console.Write("Is this a (B)ook, (E)letronic or (F)urtniture? ");
+                    Console.Clear();
+                    Console.Write("Is this a (B)ook, (E)lectronic or (F)urtniture? ");
                     type = char.ToLower(Console.ReadKey().KeyChar);
                     if (!allowedDepartments.Contains(type))
                     {
@@ -59,7 +63,7 @@ namespace Course
                 do
                 {
                     nok = false;
-                    Console.WriteLine("\n----------------------------------------");
+                    Console.WriteLine($"\n{new string('-', LineSize)}");
                     Console.WriteLine("Item #" + i + " data:");
 
                     try
@@ -124,9 +128,9 @@ namespace Course
                             string model = Console.ReadLine();
                             Console.Write("Manufacture date (MM/DD/YYYY): ");
                             DateTime manufactureDate = DateTime.Parse(Console.ReadLine());
-                            ListEnums(typeof(Eletronic));
-                            Console.Write("Eletronic: ");
-                            Eletronic kind = (Eletronic)int.Parse(Console.ReadLine());
+                            ListEnums(typeof(Electronic));
+                            Console.Write("Electronic: ");
+                            Electronic kind = (Electronic)int.Parse(Console.ReadLine());
                             list.Add(new Electronics(name, description, weight,
                                 price, kind, model, manufactureDate));
                         }
@@ -166,12 +170,12 @@ namespace Course
                 }
             }
 
-            Console.WriteLine();
-            Console.WriteLine("\n###########################################");
+            Console.Clear();
+            Console.WriteLine(new string('#', LineSize));
             Console.WriteLine("PRICE TAGS:");
             foreach (Item prod in list)
             {
-                Console.WriteLine("\n----------------------------------------");
+                Console.WriteLine($"\n{new string('-', LineSize)}");
                 Console.WriteLine(prod.PriceTag());
             }
 

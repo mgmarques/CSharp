@@ -31,10 +31,10 @@ public class BasicInventorySystemUnitTest
         }
 
         [Theory]
-        [InlineData("X-Box", "Super Game", 0.75, 359.99, Eletronic.Console,
+        [InlineData("X-Box", "Super Game", 0.75, 359.99, Electronic.Console,
             "X-BOX S", "01/01/2023")]
         public void ElectronicsTest(string name, string description, float weight,
-            double price, Eletronic kind, string model, string date)
+            double price, Electronic kind, string model, string date)
         {
             DateTime manufactureDate = DateTime.Parse(date);
             Electronics electronic = new Electronics(name, description, weight,

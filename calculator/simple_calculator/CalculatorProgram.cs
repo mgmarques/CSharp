@@ -10,9 +10,6 @@ namespace CalculatorProgram
         public static void Main(string[] args)
         {
             bool endApp = false;
-            // Display title as the C# console calculator app.
-            Console.WriteLine("Console Calculator in C#\r");
-            Console.WriteLine("------------------------\n");
             Calculator calculator = new Calculator();
 
             while (!endApp)
@@ -22,7 +19,10 @@ namespace CalculatorProgram
                 string? numInput1 = "";
                 string? numInput2 = "";
                 double result = 0;
-
+                Console.Clear();
+                // Display title as the C# console calculator app.
+                Console.WriteLine("Console Calculator in C#\r");
+                Console.WriteLine("------------------------\n");
                 // Ask the user to type the first number.
                 Console.Write("Please, type the firt number, and then press Enter: ");
                 numInput1 = Console.ReadLine();

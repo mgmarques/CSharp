@@ -7,13 +7,14 @@ namespace SortsListNumbers
         static void Main(string[] args)
         {
             bool endApp = false;
-            // Display title as the C# Console Sort a List of Numbers app.
-            Console.WriteLine("Console Sort a List of Numbers C#\r");
-            Console.WriteLine("---------------------------------\n");
             App sortsListNumbers = new App();
 
             while (!endApp)
             {
+                // Display title as the C# Console Sort a List of Numbers app.
+                Console.WriteLine("Console Sort a List of Numbers C#\r");
+                Console.WriteLine("---------------------------------\n");
+                Console.WriteLine("Enter the list of comma-separated integers below:\n");
                 string[] line = Console.ReadLine().Split(',');
                 int[] results = sortsListNumbers.SortList(line);
 
@@ -22,7 +23,7 @@ namespace SortsListNumbers
                     "other key to continue:");
                 if (Console.ReadKey().Key.ToString().ToLower() == "n")
                     endApp = true;
-                Console.WriteLine("\n------------------------\n");
+                Console.Clear();
             }
             return;
         }

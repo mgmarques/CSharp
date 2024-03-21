@@ -102,7 +102,7 @@ class Program
         Console.WriteLine("First {0} a passing grade.", g1.Passing() ? "is" : "is not");
         Console.WriteLine("Second {0} a passing grade.", g2.Passing() ? "is" : "is not");
 
-        Console.ReadKey();
+        
     }
 }
 

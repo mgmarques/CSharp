@@ -1,0 +1,14 @@
+# Exercise 1: Building an Asynchronous File Reader
+
+## Statement:
+Develop a console application in C# that asynchronously reads the contents of a text file and displays them on the console. The application should gracefully handle any exceptions that occur during the file reading process, such as the file not existing.
+
+### Topics to Practice:
+* Asynchronous methods and the await keyword
+* Reading using streams
+* Exception handling in asynchronous code
+
+### Hints for Implementation:
+* Use the System.IO.File class and its ReadAllTextAsync method to read the file contents.
+* Encapsulate the read operation in a try-catch block to handle potential exceptions.
+* Use async and await to perform the read operation without blocking the main thread.

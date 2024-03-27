@@ -42,14 +42,14 @@ class Program
             Console.WriteLine("-------------------------");
             string workingDirectory = Environment.CurrentDirectory;
             string project = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
-            string path = $"{project}/Resources/";
+            string path = System.IO.Path.Join(project, "Resources");
             Console.Write($"Enter the full file name or full filename with its sub folder to read from path {path}: ");
             string fileName = Console.ReadLine();
-
+            string fullPath = System.IO.Path.Join(path, fileName);
             try
             {
                 // Use async and await to perform the read operation without blocking the main thread.
-                string fileContents = await ReadFileAsync($"{path}{fileName}");
+                string fileContents = await ReadFileAsync(fullPath);
                 Console.WriteLine($"\nReading the {fileName} file from path: {path}");
                 Console.WriteLine("\nFile Contents:");
                 Console.WriteLine($"{new string('-', LineSize)}");

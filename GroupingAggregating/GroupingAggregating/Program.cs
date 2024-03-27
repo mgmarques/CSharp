@@ -62,7 +62,7 @@ class Program
         }
 
         double total = query.Select(p => p.Sales).DefaultIfEmpty(0.0).Sum();
-        Console.WriteLine($"\nAverage sales value = {total.ToString("F2", CultureInfo.InvariantCulture)}\n");
+        Console.WriteLine($"\nTotal sales value = {total.ToString("F2", CultureInfo.InvariantCulture)}\n");
         var avg = transactions.Select(p => p.Price * p.Quantity).DefaultIfEmpty(0.0).Average();
         Console.WriteLine($"Average sales value by invoce item = {avg.ToString("F2", CultureInfo.InvariantCulture)}\n");
 

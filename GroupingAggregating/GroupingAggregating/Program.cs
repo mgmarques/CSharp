@@ -21,7 +21,7 @@ class Program
         Console.WriteLine($"\n{new string('-', LineSize)}");
         string workingDirectory = Environment.CurrentDirectory;
         string project = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
-        Console.Write($"\nReadin file from path: {project}/Resources");
+        Console.Write($"\nReading a file from path: {project}/Resources");
         string path = $"{project}/Resources/transactions.csv";
 
         List<Models.Transaction> transactions = new List<Models.Transaction>();

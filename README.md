@@ -17,12 +17,12 @@ This repository contains all documents and projects with the codes for solved Bo
 * GroupingAggregating: Grouping and aggregating data from a collection of objects.
 
 ### Level 4: Asynchronous programming ###
-* Building an asynchronous file reader.
-* Implementing a multi-threaded data processing application.
+* AsynchronousFileReader: Building an asynchronous file reader.
+* Multi-threadedDataProcessingApplication: Implementing a multi-threaded data processing application.
 
 ### Level 5: ORM concepts ###
-* Building a data access layer for an e-commerce application.
-* Implementing complex queries using LINQ with Entity Framework.
+* DALECommerceApp: Building a data access layer for an e-commerce application.
+* DALComplexQueries: Implementing complex queries using LINQ with Entity Framework.
 
 ### Level 6: Introduction to web development with ASP.NET MVC ###
 * A simple blog or to-do list application following the MVC pattern.

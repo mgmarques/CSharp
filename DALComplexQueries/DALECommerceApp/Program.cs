@@ -16,7 +16,7 @@ namespace DALECommerceApp;
 
 class Program
 {
-    public const int LineSize = 80;
+    public const int LineSize = 82;
 
     //Create DBContext object
     static void OrderReport(AppDbContext db, string message)
@@ -61,7 +61,7 @@ class Program
                     );
                 firstLine = false;
             }
-            Console.WriteLine($"       * Value: {item.TotalItemValue.ToString("F2", CultureInfo.InvariantCulture)}" +
+            Console.WriteLine($"       * Value: {item.TotalItemValue.ToString("C2", CultureInfo.CurrentCulture)}" +
                 $" | Quantity: {item.Quantity} | {item.Prduct}");
         }
 
@@ -86,8 +86,8 @@ class Program
 
         foreach (var item in queryTransactions)
         {
-            Console.WriteLine($"Invoice Total Value: {item.TotalItemValue.ToString("F2", CultureInfo.InvariantCulture)}");
-            Console.WriteLine($"Invoice Average Value by Item: {item.AverageItemValue.ToString("F2", CultureInfo.InvariantCulture)}");
+            Console.WriteLine($"Invoice Total Value: {item.TotalItemValue.ToString("C2", CultureInfo.CurrentCulture)}");
+            Console.WriteLine($"Invoice Average Value by Item: {item.AverageItemValue.ToString("C2", CultureInfo.CurrentCulture)}");
         }
 
         // Wait for the user press any key before closing.
@@ -268,15 +268,14 @@ class Program
                         })
             orderby t.TotalSales descending
             select t;
-        Console.WriteLine($"{String.Format("{0,-55}", "Product:")} | "
-            + $"{String.Format("{0,-1}", "Amount:")} | " 
-            + $"Value:");
-        Console.WriteLine($"{new string('-', LineSize)}");
+
+        Console.WriteLine("{0,-56}{1,-1}{2,-1}", "Product:", "| Amount:", "| Value:");
+        Console.WriteLine($"{new string('-', 56)}+{new string('-', 8)}+{new string('-', 15)}");
         foreach (var product in querySalesProducts)
         {
             Console.WriteLine($"{String.Format("{0,-55}", product.Product)} | " 
-                + $"{String.Format("{0,-7}", product.Amount)} | " 
-                + $"{product.TotalSales.ToString("F2", CultureInfo.InvariantCulture)}");
+                + $"{String.Format("{0,6}", product.Amount)} | " 
+                + $"{String.Format("{0,13}", product.TotalSales.ToString("c2", CultureInfo.CurrentCulture))}");
         }
 
         // Wait for the user press any key before closing.
@@ -299,14 +298,12 @@ class Program
                 Category = _product.Category
             };
 
-        Console.WriteLine($"{String.Format("{0,-2}", "ID:")} | "
-            + $"{String.Format("{0,-55}", "Product Name:")} | "
-            + $"Category:");
-        Console.WriteLine($"{new string('-', LineSize)}");
+        Console.WriteLine("{0,-7}{1,-51}{2,-10}", "ID:", "| Product Name:", "| Category:");
+        Console.WriteLine($"{new string('-', 7)}+{new string('-', 50)}+{new string('-', 15)}");
         foreach (var product in queryProductsNeverOrdered)
         {
-            Console.WriteLine($"{String.Format("{0,-3}", product.ID)} | "
-                + $"{String.Format("{0,-55}", product.Name)} | "
+            Console.WriteLine($"{String.Format("{0,-6}", product.ID)} | "
+                + $"{String.Format("{0,-48}", product.Name)} | "
                 + $"{product.Category}");
         }
 
@@ -335,15 +332,14 @@ class Program
             orderby t.TotalSales descending
 
             select t;
-        Console.WriteLine($"{String.Format("{0,-55}", "Customer:")} | "
-            + $"{String.Format("{0,-1}", "Amount:")} | "
-            + $"Value:");
-        Console.WriteLine($"{new string('-', LineSize)}");
+
+        Console.WriteLine("{0,-51 }{1,2}{2,1}", "Customer:", "| Amount: ", "| Value:");
+        Console.WriteLine($"{new string('-', 51)}+{new string('-', 9)}+{new string('-', 15)}");
         foreach (var customer in queryHighValueCustomers)
         {
-            Console.WriteLine($"{String.Format("{0,-55}", customer.Customer)} | "
-                + $"{String.Format("{0,-7}", customer.Amount)} | "
-                + $"{customer.TotalSales.ToString("F2", CultureInfo.InvariantCulture)}");
+            Console.WriteLine($"{String.Format("{0,-50}", customer.Customer)} | "
+                + $"{String.Format("{0,7}", customer.Amount)} | "
+                + $"{String.Format("{0,13}",customer.TotalSales.ToString("C2", CultureInfo.CurrentCulture))}");
         }
 
         // Wait for the user press any key before closing.

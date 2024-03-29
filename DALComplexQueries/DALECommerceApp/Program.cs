@@ -313,7 +313,7 @@ class Program
 
         // High-Value Customers:
         Console.Clear();
-        Console.WriteLine("High-Value Customers (greater than $ 10000):\n");
+        Console.WriteLine("High-Value Customers (greater than $ 10,000.00):\n");
 
         var queryHighValueCustomers =
             from t in (

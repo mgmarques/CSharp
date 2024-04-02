@@ -1,0 +1,29 @@
+dotnet aspnet-codegenerator controller -name BooksController -async -api -m Book -dc BookContext -outDir Controllers
+
+{
+  "category": 23,
+  "title": "Apps and Services with .NET 8: Build practical projects with Blazor, .NET MAUI, gRPC, GraphQL, and other enterprise technologies",
+  "publisher": "Packt Publishing",
+  "edition": 2,
+  "editionDate": "2023-12-12",
+  "language": 0,
+  "paperbackPages": 798,
+  "isbN_10": "183763713X",
+  "isbN_13": "978-183763713X",
+  "weight": 3.01,
+  "dimensions": "9.25 x 7.52 x 1.59"
+}
+
+{
+  "category": 23,
+  "title": "Blazor 8.0: Moderne Webanwendungen und hybride Cross-Platform-Apps mit .NET 8.0, C# 12.0 und Visual Studio 2022 (.NET 8.0-Fachbuchreihe von Dr. Holger Schwichtenberg 3)",
+  "publisher": "IT Visions",
+  "edition": 8,
+  "editionDate": "2023-07-23",
+  "language": 7,
+  "paperbackPages": 1647,
+  "isbN_10": "B0CLKZJKTX",
+  "isbN_13": "999-B0CLKZJKTX",
+  "weight": 5.75,
+  "dimensions": "9.25 x 7.52 x 3.09"
+}

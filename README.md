@@ -4,34 +4,33 @@
 This repository contains all documents and projects with the codes for solved Bootcamp .NET and C# exercises.
 
 ### Level 1: Basics of C# ###
-* hello_world: Hello World application.
-* calculator: Calculator for basic arithmetic operations.
-* sortsListNumbers: A console application that sorts a list of numbers.
+* **hello_world:** Hello World application.
+* **calculator:** Calculator for basic arithmetic operations.
+* **sortsListNumbers:** A console application that sorts a list of numbers.
 
 ### Level 2: Object-oriented programming ###
-* BasicInvetorysystem: Building a simple class hierarchy (e.g., a basic inventory system).
-* ShapesDrawing: Implementing interfaces and abstract classes in a shapes drawing application.
+* **BasicInvetorysystem:** Building a simple class hierarchy (e.g., a basic inventory system).
+* **ShapesDrawing:** Implementing interfaces and abstract classes in a shapes drawing application.
 
 ### Level 3: Understanding LINQ ###
-* FilteringSorting: A LINQ query application filtering and sorting a list of products.
-* GroupingAggregating: Grouping and aggregating data from a collection of objects.
+* **FilteringSorting**: A LINQ query application filtering and sorting a list of products.
+* **GroupingAggregating**: Grouping and aggregating data from a collection of objects.
 
 ### Level 4: Asynchronous programming ###
-* AsynchronousFileReader: Building an asynchronous file reader.
-* Multi-threadedDataProcessingApplication: Implementing a multi-threaded data processing application.
+* **AsynchronousFileReader:** Building an asynchronous file reader.
+* **Multi-threadedDataProcessingApplication:** Implementing a multi-threaded data processing application.
 
 ### Level 5: ORM concepts ###
-* DALECommerceApp: Building a data access layer for an e-commerce application.
-* DALComplexQueries: Implementing complex queries using LINQ with Entity Framework.
+* **DALECommerceApp:** Building a data access layer for an e-commerce application.
+* **DALComplexQueries:** Implementing complex queries using LINQ with Entity Framework.
 
 ### Level 6: Introduction to web development with ASP.NET MVC ###
 * A simple blog or to-do list application following the MVC pattern.
 * A Razor pages application for a small business.
 
 ### Level 7: Building and consuming RESTful APIs with .NET Core ###
-* Developing a RESTful API for a bookstore.
-* Consuming APIs in a console application.
-
+* **bookApi:** Developing a RESTful API for a bookstore.
+* **bookClient:** Consuming APIs in a console application.
 
 ### Level 8: Developing and containerizing microservices with Docker ###
 * Developing a simple microservices application with two services.

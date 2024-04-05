@@ -22,7 +22,7 @@ public class OrderItem
     public int Quantity { get; set; }
 
     [Required(ErrorMessage = "This field {0} is mandatory")]
-    [Range(0.01, int.MaxValue, ErrorMessage = "Invalid Value")]
+    [Range(0.01, double.MaxValue, ErrorMessage = "Invalid Value")]
     [DisplayFormat(DataFormatString = "{0:F2}")]
     public double Price { get; set; }
 

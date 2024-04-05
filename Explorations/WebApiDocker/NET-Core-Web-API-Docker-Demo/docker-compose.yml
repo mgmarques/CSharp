@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  net-core-web-api-docker-demo:
+    image: ${DOCKER_REGISTRY-}netcorewebapidockerdemo
+    build:
+      context: .
+      dockerfile: NET-Core-Web-API-Docker-Demo/Dockerfile

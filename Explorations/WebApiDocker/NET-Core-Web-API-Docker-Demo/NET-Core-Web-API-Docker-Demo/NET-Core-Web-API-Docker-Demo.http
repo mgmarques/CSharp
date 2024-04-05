@@ -1,0 +1,7 @@
+﻿@NET_Core_Web_API_Docker_Demo_HostAddress = http://localhost:5053
+
+GET {{NET_Core_Web_API_Docker_Demo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+

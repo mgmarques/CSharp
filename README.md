@@ -25,17 +25,17 @@ This repository contains all documents and projects with the codes for solved Bo
 * **DALComplexQueries:** Implementing complex queries using LINQ with Entity Framework.
 
 ### Level 6: Introduction to web development with ASP.NET MVC ###
-* A simple to-do list application following the MVC pattern.
-* Create a task with data anotations and model validation
+* **TodoListMVC**:
+    - **Exercise 1**: A simple to-do list application following the MVC pattern.
+    - **Exercise 2**: Create a task with data anotations and model validation
 
 ### Level 7: Building and consuming RESTful APIs with .NET Core ###
 * **bookApi:** Developing a RESTful API for a bookstore.
 * **bookClient:** Consuming APIs in a console application.
 
 ### Level 8: Developing and containerizing microservices with Docker ###
-* **TodoListMVC**:
-    - **Exercise 1**: Developing a simple microservices application with two services.
-    - **Exercise 2**: Containerizing a .NET Core application and deploying it with Docker.
+* Developing a simple microservices application with two services.
+* Containerizing a .NET Core application and deploying it with Docker.
 
 ### Level 9: Final project ###
 #### Project Idea: ####

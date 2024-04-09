@@ -34,8 +34,9 @@ This repository contains all documents and projects with the codes for solved Bo
 * **bookClient:** Consuming APIs in a console application.
 
 ### Level 8: Developing and containerizing microservices with Docker ###
-* Developing a simple microservices application with two services.
-* Containerizing a .NET Core application and deploying it with Docker.
+* **NET-Core-Web-API-Docker**: Create a dockerized ASP.NET API application.
+* Create a dockerized ASP.NET MVC application.
+* **ComposeExcercise**: Implement docker compose
 
 ### Level 9: Final project ###
 #### Project Idea: ####

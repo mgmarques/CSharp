@@ -36,7 +36,7 @@ This repository contains all documents and projects with the codes for solved Bo
 ### Level 8: Developing and containerizing microservices with Docker ###
 * **NET-Core-Web-API-Docker**: Create a dockerized ASP.NET API application.
 * Create a dockerized ASP.NET MVC application.
-* **ComposeExcercise**: Implement docker compose
+* **ComposeExercise**: Implement docker compose
 
 ### Level 9: Final project ###
 #### Project Idea: ####

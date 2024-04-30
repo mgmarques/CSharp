@@ -1,0 +1,90 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 15s
+      timeout: 60s
+      retries: 3
+
+  gameshopping.identityserver:
+    image: ${DOCKER_REGISTRY-}gameshoppingidentityserver
+    build:
+      context: .
+      dockerfile: GameShopping.IdentityServer/Dockerfile
+
+  gameshopping.productapi:
+    image: ${DOCKER_REGISTRY-}gameshoppingproductapi
+    build:
+      context: .
+      dockerfile: GameShopping.ProductAPI/Dockerfile
+
+  gameshopping.cartapi:
+    image: ${DOCKER_REGISTRY-}gameshoppingcartapi
+    build:
+      context: .
+      dockerfile: GameShopping.CartAPI/Dockerfile
+
+  gameshopping.couponapi:
+    image: ${DOCKER_REGISTRY-}gameshoppingcouponapi
+    build:
+      context: .
+      dockerfile: GameShopping.CouponAPI/Dockerfile
+
+  gameshopping.web:
+    image: ${DOCKER_REGISTRY-}gameshoppingweb
+    build:
+      context: .
+      dockerfile: GameShopping.Web/Dockerfile
+    depends_on:
+        - gameshopping.cartapi
+        - gameshopping.productapi
+        - gameshopping.couponapi
+        - rabbitmq
+
+  gameshopping.email:
+    image: ${DOCKER_REGISTRY-}gameshoppingemail
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: GameShopping.Email/Dockerfile
+    depends_on:
+        rabbitmq:
+            condition: service_healthy
+
+  gameshopping.orderapi:
+    image: ${DOCKER_REGISTRY-}gameshoppingorderapi
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: GameShopping.OrderAPI/Dockerfile
+    depends_on:
+        rabbitmq:
+            condition: service_healthy
+
+  gameshopping.paymentapi:
+    image: ${DOCKER_REGISTRY-}gameshoppingpaymentapi
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: GameShopping.PaymentAPI/Dockerfile
+    depends_on:
+        rabbitmq:
+            condition: service_healthy
+
+
+  gameshopping.apigateway:
+    image: ${DOCKER_REGISTRY-}gameshoppingapigateway
+    build:
+      context: .
+      dockerfile: GameShopping.APIGateway/Dockerfile
+    depends_on:
+        - gameshopping.cartapi
+        - gameshopping.productapi
+        - gameshopping.couponapi
+        - gameshopping.paymentapi
+        - gameshopping.web
+        - gameshopping.orderapi

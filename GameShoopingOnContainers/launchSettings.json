@@ -1,0 +1,20 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "gameshopping.web": "StartDebugging",
+        "gameshopping.cartapi": "StartDebugging",
+        "gameshopping.couponapi": "StartDebugging",
+        "gameshopping.email": "StartDebugging",
+        "gameshopping.identityserver": "StartDebugging",
+        "gameshopping.orderapi": "StartDebugging",
+        "gameshopping.paymentapi": "StartDebugging",
+        "gameshopping.productapi": "StartDebugging",
+        "gameshopping.apigateway": "StartDebugging",
+        "rabbitmq": "StartWithoutDebugging"
+      }
+    }
+  }
+}

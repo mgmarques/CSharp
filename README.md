@@ -35,13 +35,15 @@ This repository contains all documents and projects with the codes for solved Bo
 
 ### Level 8: Developing and containerizing microservices with Docker ###
 * **NET-Core-Web-API-Docker**: Create a dockerized ASP.NET API application.
-* Create a dockerized ASP.NET MVC application.
+* **BooksMvcClient**: Create a dockerized ASP.NET MVC application.
 * **ComposeExercise**: Implement docker compose
 
 ### Level 9: Final project ###
 #### Project Idea: ####
 
 An e-commerce platform, product listings, and order management.
+* **GameShopping**: Complete functional solution success locally runniog.
+* **GameShoopingOnContainers**: Verion that runs successfully and healthily all containers and all are accessible by their URLs. It still has an issue is on the Web application, where the connection is refused by Ocelot when trying to retrieve the list of products that do not require authorization.
 
 #### Project Requirements: ####
 

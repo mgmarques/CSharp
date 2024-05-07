@@ -1,18 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TodoList.Data;
 using TodoList.Models;
+using NLog;
 
 namespace TodoList.Controllers
 {
     public class TodosController : Controller
     {
         private readonly TodoContext _context;
+        private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
         public TodosController(TodoContext context)
         {
@@ -24,6 +22,7 @@ namespace TodoList.Controllers
         {
             if (_context.Todo == null)
             {
+                _logger.Error("Entity set 'TodoContext.Todo'  is null.");
                 return Problem("Entity set 'TodoContext.Todo'  is null.");
             }
 
@@ -49,7 +48,7 @@ namespace TodoList.Controllers
                 Priorities = new SelectList(await priorityQuery.Distinct().ToListAsync()),
                 Todos = await todos.ToListAsync()
             };
-
+            _logger.Info("Has Todos.");
             return View(todoPriorityVM);
         }
 
@@ -58,6 +57,7 @@ namespace TodoList.Controllers
         {
             if (id == null)
             {
+                _logger.Info("Id not informed");
                 return NotFound();
             }
 
@@ -65,9 +65,10 @@ namespace TodoList.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (todo == null)
             {
+                _logger.Info("Id {Id} Task not found.", id);
                 return NotFound();
             }
-
+            _logger.Info("Todo Deteails {Todo} from id {Id} task.", todo, id);
             return View(todo);
         }
 
@@ -90,6 +91,7 @@ namespace TodoList.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            _logger.Info("Task created. {Todo}", todo);
             return View(todo);
         }
 
@@ -98,14 +100,17 @@ namespace TodoList.Controllers
         {
             if (id == null)
             {
+                _logger.Warn("Id not informed");
                 return NotFound();
             }
 
             var todo = await _context.Todo.FindAsync(id);
             if (todo == null)
             {
+                _logger.Warn("Id {Id} Task not found.", id);
                 return NotFound();
             }
+            _logger.Info("Found task: {Todo}", todo);
             return View(todo);
         }
 
@@ -118,6 +123,7 @@ namespace TodoList.Controllers
         {
             if (id != todo.Id)
             {
+                _logger.Warn("Id {Id} informed is different from the task.", id);
                 return NotFound();
             }
 
@@ -128,19 +134,22 @@ namespace TodoList.Controllers
                     _context.Update(todo);
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (DbUpdateConcurrencyException ex)
                 {
                     if (!TodoExists(todo.Id))
                     {
+                        _logger.Warn("Id {Id} Task not found. {Error}", id, ex);
                         return NotFound();
                     }
                     else
                     {
+                        _logger.Error("Error when try to update the task Id {Id}. {Error}", id, ex);
                         throw;
                     }
                 }
                 return RedirectToAction(nameof(Index));
             }
+            _logger.Info("Found task: {Todo}", todo);
             return View(todo);
         }
 
@@ -149,6 +158,7 @@ namespace TodoList.Controllers
         {
             if (id == null)
             {
+                _logger.Warn("Id not informed");
                 return NotFound();
             }
 
@@ -156,9 +166,10 @@ namespace TodoList.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (todo == null)
             {
+                _logger.Warn("Id {Id} Task not found.", id);
                 return NotFound();
             }
-
+            _logger.Info("Deleted task {Todo} from {Id} ", todo, id);
             return View(todo);
         }
 

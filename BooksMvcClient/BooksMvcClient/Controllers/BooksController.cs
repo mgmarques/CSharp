@@ -55,6 +55,7 @@ namespace BooksMvcClient.Controllers
                     }
                 );
             }
+            _logger.LogInformation("test");
 
             return View(booksDto);
         }
